@@ -1,8 +1,8 @@
 const screens = document.querySelectorAll('.screen')
 
-const choose_insect_btns = document.querySelectorAll('.choose_insect_btns')
-const start_btn = document.querySelectorAll('.start_btn')
-const game_container = document.querySelectorAll('.game_container')
+const choose_insect_btns= document.querySelectorAll('.choose-insect-btn')
+const start_btn = document.querySelectorAll('.start-btn')
+const game_container = document.querySelectorAll('.game-container')
 
 const tiemEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
@@ -32,9 +32,9 @@ function startGame() {
 
 function increaseTime() {
     let m = Math.floor(seconds / 60)
-    let s = seconds & 60
+    let s = seconds % 60
     m = m < 10 ? `0${m}` : m
-    s = s < 10 ? `0${s}` : seconds
+    s = s < 10 ? `0${s}` : s
 timeEl.innerHTML = `Time: ${m}:${s}`
     seconds++
 }
@@ -43,11 +43,13 @@ function createInsect() {
     const insect = document.createElement('div')
     insect.classList.add('insect')
     const {x,y} = getRandomLocation()
-    insect.style.top=`${y}px`
-    insect.style.left=`${x}px`
-    insect.innerHTML = `<img src="${selected_insect.src}" alt="${selected_insect.alt}" style="transform: rotate(${Math.random()*360}deg)" />` 
+    insect.style.top= `${y}px`
+    insect.style.left= `${x}px`
+    insect.innerHTML = `<img
+    src="${selected_insect.src}" alt="${selected_insect.alt}"
+    style="transform: rotate(${Math.random()*360}deg)" />` 
     insect.addEventListener('click', catchInsect)
-    game_container.appendchild(insect)
+    game_container.appendChild(insect)
 }
 
 function getRandomLocation() {
@@ -80,5 +82,5 @@ function increaseScore() {
 scoreEl.innerHTML = `score: ${score}`
 }
 
-message.addEventListener("click", ()=> screens[1].classList.remove("up"))
+message.addEventListener('click', ()=> screens[1].classList.remove('up'))
 
