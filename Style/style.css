@@ -45,3 +45,23 @@ body{
 .btn:focus{
     outline: 0;
 }
+
+.screen.up{
+    margin-top: -100vh;
+}
+
+.screen.up{
+    margin-top: -200vh;
+}
+
+h1{
+    line-height: 1.4;
+}
+
+.insect-list{
+    display:flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+    padding: 0;
+}
