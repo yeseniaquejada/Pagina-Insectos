@@ -66,3 +66,19 @@ function catchInsect() {
     setTimeout(() => this.renove(), 2000)
     addInsects()
 }
+
+function addInsects() {
+    setTimeout(createInsect,3000)
+    setTimeout(createInsect,2500)
+}
+
+function increaseScore() {
+    score++
+    if(score > 19){
+        message.classList.add("visible")
+    }
+scoreEl.innerHTML = `score: ${score}`
+}
+
+message.addEventListener("click", ()=> screens[1].classList.remove("up"))
+
