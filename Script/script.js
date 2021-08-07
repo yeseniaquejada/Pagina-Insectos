@@ -13,3 +13,28 @@ let score = 0;
 let selected_insect = {};
 
 start_btn.addEventListener('click',()=> screens[0].classList.add('up'))
+
+choose_insect_btns.forEach(btn =>{
+    btn.addEventListener('click', () =>{
+        const img = btn.querySelector('img');
+        const src = img.getAttribute('src');
+        const alt = img.getAttribute('src');
+        selected_insect = {src, alt}
+
+        setTimeout(createInsect, 1000)
+        startGame()
+    })
+})
+
+function startGame() {
+    setInterval(increaseTime, 1000)
+}
+
+function increaseTime() {
+    let m = Math.floor(seconds / 60)
+    let s = seconds & 60
+    m = m < 10 ? `0${m}` : m
+    s = s < 10 ? `0${s}` : seconds
+timeEl.innerHTML = `Time: ${m}:${s}`
+    seconds++
+}
