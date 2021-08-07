@@ -65,7 +65,7 @@ function getRandomLocation() {
 function catchInsect() {
     increaseScore()
     this.classList.add('caught')
-    setTimeout(() => this.renove(), 2000)
+    setTimeout(() => this.remove(), 2000)
     addInsects()
 }
 
@@ -77,10 +77,10 @@ function addInsects() {
 function increaseScore() {
     score++
     if(score > 19){
-        message.classList.add("visible")
+        message.classList.add('visible')
     }
 scoreEl.innerHTML = `score: ${score}`
 }
 
-message.addEventListener('click', ()=> screens[1].classList.remove('up'))
+message.addEventListener('click',()=> screens[1].classList.remove('up'))
 
